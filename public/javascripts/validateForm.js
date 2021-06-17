@@ -13,7 +13,6 @@ if (form) {
 
   // add bootstrap validation
   submitButton.addEventListener('click', function onSubmitButtonClicked (event) {
-    console.log('hi')
     form.classList.add('was-validated')
   })
 }
