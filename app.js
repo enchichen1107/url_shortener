@@ -1,6 +1,7 @@
 // init packages
 const express = require('express')
 const exphbs = require('express-handlebars')
+const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
@@ -21,6 +22,7 @@ app.set('view engine', 'hbs')
 
 // preprocess before enter routes
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // show front page
 app.get('/', (req, res) => {
