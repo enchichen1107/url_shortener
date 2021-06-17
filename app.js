@@ -2,6 +2,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const generateShortUrl = require('./models/shorten_url')
 const app = express()
 const port = 3000
 
@@ -31,7 +32,8 @@ app.get('/', (req, res) => {
 
 // post data
 app.post('/', (req, res) => {
-  res.redirect('/')
+  const shortUrl = generateShortUrl()
+  res.render('index', { shortUrl })
 })
 
 // set port 3000

@@ -3,24 +3,30 @@
     <div class="col-12 col-lg-10 col-xl-8 mx-auto">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Paste your URL and shorten it right now!</h5>
+          <h5 class="card-title">Shorten URL right now!</h5>
           <hr>
           <div class="col-8 mx-auto d-flex justify-content-center">
             <span style="font-size:10rem; color: rgba(30, 146, 146);">
               <i class="fas fa-cut"></i>
             </span>
           </div>
-          <form id="form" method="POST" action="/" novalidate>
-            <div class="form-group row">
-              <label for="original-url" class="col-md-4 form-label">
-                Original URL
+          <form id="form" class="col-12" method="POST" action="/" novalidate>
+            <div class="form-group">
+              <label for="original-url" class="col-md-8 form-label">
+                Please paste original URL in below input box
               </label>
-              <input type="url" name="originalUrl" class="form-control col-11 mx-auto" id="original-url"
-                placeholder="http://....com/...." aria-label="original url" required>
+              <input type="url" name="originalUrl" class="form-control col-12" id="original-url"
+                placeholder="Original URL: http://...........................com/.........................."
+                aria-label="original url" required>
               <div class="valid-feedback ml-3">Nice input!</div>
               <div class="invalid-feedback ml-3">Please enter correct url</div>
             </div>
-            <div class="d-flex justify-content-center">
+            {{#if shortUrl}}
+            <div class="alert alert-info col-12" role="alert">
+              <span class="mr-2">Shortened URL:</span> <code>{{shortUrl}}</code>
+            </div>
+            {{/if}}
+            <div class="d-flex justify-content-end">
               <button class="btn btn-success submit-button" type="submit">Shorten!</button>
             </div>
           </form>

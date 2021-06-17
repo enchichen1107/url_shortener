@@ -9,19 +9,17 @@ const numbers = '1234567890'
 const allDigits = lowerCaseLetters + upperCaseLetters + numbers
 const collection = allDigits.split('')
 
-// generate 5 random digits
-function generateFiveDigits (collection) {
+// generate shortened url
+function generateShortUrl () {
   let randomDigits = ''
   let randomIndex
   for (let i = 0; i < shortUrlLength; i++) {
     randomIndex = Math.floor(Math.random() * collection.length)
     randomDigits += collection[randomIndex]
   }
-  return randomDigits
+  const shortUrl = preUrl + randomDigits
+  return shortUrl
 }
 
-// combine random digits to short url
-const shortUrl = preUrl + generateFiveDigits(collection)
-
-// export short url
-module.exports = shortUrl
+// export shortened url function
+module.exports = generateShortUrl
