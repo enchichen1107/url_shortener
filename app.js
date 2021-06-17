@@ -19,9 +19,17 @@ db.once('open', () => {
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
+// preprocess before enter routes
+app.use(express.static('public'))
+
 // show front page
 app.get('/', (req, res) => {
   res.render('index')
+})
+
+// post data
+app.post('/', (req, res) => {
+  res.redirect('/')
 })
 
 // set port 3000
