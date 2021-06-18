@@ -3,6 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const generateShortUrl = require('./models/shorten_url')
+const Url = require('./models/url')
 const app = express()
 const port = 3000
 
@@ -31,9 +32,15 @@ app.get('/', (req, res) => {
 })
 
 // post data
-app.post('/', (req, res) => {
-  const shortUrl = generateShortUrl()
-  res.render('index', { shortUrl })
+app.post('/', async (req, res) => {
+  const shortUrl = await generateShortUrl()
+  const originalUrl = req.body.originalUrl
+  const urlResults = {
+    originalUrl, shortUrl
+  }
+  Url.create(urlResults)
+    .then(() => { res.render('index', { shortUrl }) })
+    .catch(error => console.log(error))
 })
 
 // set port 3000
