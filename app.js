@@ -40,7 +40,7 @@ app.post('/', async (req, res) => {
     originalUrl, shortUrl
   }
   Url.create(urlResults)
-    .then(() => { res.render('index', { shortUrl }) })
+    .then(() => { res.render('index', { shortUrl, originalUrl }) })
     .catch(error => console.log(error))
 })
 
