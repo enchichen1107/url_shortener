@@ -1,6 +1,6 @@
 // basic shortened url information
 const shortUrlLength = 5
-const preUrl = 'http://localhost:3000/'
+const baseUrl = 'http://localhost:3000/'
 
 // collection of all possible digits
 const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
@@ -29,7 +29,7 @@ async function generateShortUrl () {
     randomIndex = Math.floor(Math.random() * collection.length)
     randomDigits += collection[randomIndex]
   }
-  const shortUrl = preUrl + randomDigits
+  const shortUrl = baseUrl + randomDigits
 
   // check uniqueness of the shortUrl
   let uniqueShortUrl = ''
