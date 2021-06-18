@@ -23,10 +23,11 @@
             </div>
             {{#if shortUrl}}
             <div class="alert alert-info col-12" role="alert">
-              <span class="mr-2">Shortened URL:</span> <code>{{shortUrl}}</code>
+              <span class="mr-2">Shortened URL:</span> <input type="url" class="short-url col-12" value="{{shortUrl}}">
             </div>
             {{/if}}
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-end align-items-center">
+              <span class="tool-tip align-self-center mr-2">Copied!</span>
               <button class="btn btn-info copy-button mr-2" type="button">Copy!</button>
               <button class="btn btn-success submit-button" type="submit">Shorten!</button>
             </div>
