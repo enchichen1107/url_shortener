@@ -17,7 +17,7 @@
               </label>
               <input type="url" name="originalUrl" class="form-control col-12" id="original-url"
                 placeholder="Original URL: http://...........................com/.........................."
-                value={{originalUrl}} aria-label="original url" required>
+                value="{{originalUrl}}" aria-label="original url" required>
               <div class="valid-feedback ml-3">Nice input!</div>
               <div class="invalid-feedback ml-3">Please enter correct url</div>
             </div>
@@ -27,6 +27,7 @@
             </div>
             {{/if}}
             <div class="d-flex justify-content-end">
+              <button class="btn btn-info copy-button mr-2" type="button">Copy!</button>
               <button class="btn btn-success submit-button" type="submit">Shorten!</button>
             </div>
           </form>
