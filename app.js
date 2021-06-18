@@ -7,7 +7,7 @@ const generateShortUrl = require('./models/shorten_url')
 const Url = require('./models/url')
 const baseUrl = 'http://localhost:3000/'
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // set view engine
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
