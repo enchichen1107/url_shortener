@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 require('./config/mongoose')
 const generateShortUrl = require('./models/shorten_url')
 const Url = require('./models/url')
-const baseUrl = 'http://localhost:3000/'
+const baseUrl = 'https://obscure-refuge-30848.herokuapp.com/'
 const app = express()
 const port = process.env.PORT || 3000
 
