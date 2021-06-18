@@ -1,5 +1,6 @@
 # URL Shortener
 Fast & Simple URL Shortener
+Quick test: https://obscure-refuge-30848.herokuapp.com/
 
 ## Features
 1. Paste your URL and click "Shorten!" to gain shortened URL
