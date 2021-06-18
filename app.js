@@ -2,22 +2,12 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+require('./config/mongoose')
 const generateShortUrl = require('./models/shorten_url')
-const baseUrl = 'http://localhost:3000/'
 const Url = require('./models/url')
+const baseUrl = 'http://localhost:3000/'
 const app = express()
 const port = 3000
-
-// set db connection
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/url-list', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
 
 // set view engine
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
