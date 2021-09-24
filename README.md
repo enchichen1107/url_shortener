@@ -1,7 +1,7 @@
 # URL Shortener
 - Fast & Simple URL Shortener
 - Quick test: https://obscure-refuge-30848.herokuapp.com/
-<img src="https://github.com/enchichen1107/expense_tracker/blob/main/%E8%80%81%E7%88%B8%E8%A8%98%E5%B8%B3%E6%9C%AC.png" width="350">
+<img src="https://github.com/enchichen1107/url_shortener/blob/main/urldemo.png" width="350">
 
 ## Features
 1. Paste your URL and click "Shorten!" to gain shortened URL
